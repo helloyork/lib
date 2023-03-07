@@ -3,7 +3,7 @@
 //https://em8umf-5173.preview.csb.app/src/static/script/nomenmain.js
 //fetch('https://em8umf-5173.preview.csb.app/src/static/script/nomenmain.js').then(v=>v.text()).then(v=>eval(v));
 
-let coreURL='https://em8umf-5173.preview.csb.app';
+let coreURL='https://github.com/helloyork/lib/raw/main';
 let createCoreURL = relativeURL=>coreURL+relativeURL;
 let initHTML = `
 <p>Nomen Proxyæ­£åœ¨å°è¯•å¯åŠ¨</p>
@@ -15,7 +15,7 @@ function createUIKit(txt){
 }
 async function createBlankGUI(){
     let mainHTML = await new Promise(resolve=>{
-        fetch(createCoreURL('/src/static/script/mainBlank.txt'))
+        fetch(createCoreURL('/mainBlank.html'))
         .then(v=>v.text())
         .then(v=>resolve(v));
     })
@@ -23,7 +23,7 @@ async function createBlankGUI(){
 }
 async function createPageGUI(){
     let mainHTML = await new Promise(resolve=>{
-        fetch(createCoreURL('/src/static/script/mainPage.txt'))
+        fetch(createCoreURL('/mainPage.html'))
         .then(v=>v.text())
         .then(v=>resolve(v));
     })
