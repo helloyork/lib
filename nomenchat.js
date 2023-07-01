@@ -11,4 +11,20 @@
         document.body.appendChild(b);
     };
     await initButton();
+    var button = document.getElementById('circle-button');
+    var robotIcon = document.getElementById('robot-icon');
+    var closeIcon = document.getElementById('close-icon');
+    var iframeContainer = document.getElementById('iframe-container');
+
+    button.addEventListener('click', function () {
+        if (iframeContainer.classList.contains('show')) {
+            iframeContainer.classList.remove('show');
+            robotIcon.style.display = 'block';
+            closeIcon.style.display = 'none';
+        } else {
+            iframeContainer.classList.add('show');
+            robotIcon.style.display = 'none';
+            closeIcon.style.display = 'block';
+        }
+    });
 })()
