@@ -1,5 +1,5 @@
 
-(async()=>{
+let main = (async()=>{
     if(!window || !document)return;
     function loadSource(src){
         return new Promise(r=>{
@@ -28,4 +28,5 @@
             closeIcon.style.display = 'block';
         }
     });
-})()
+});
+setTimeout(main,2000)
