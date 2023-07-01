@@ -13,19 +13,27 @@ let main = (async()=>{
     };
     await initButton();
     var button = document.getElementById('circle-button');
+    var iframeContainer = document.getElementById('iframe-container');
     var robotIcon = document.getElementById('robot-icon');
     var closeIcon = document.getElementById('close-icon');
-    var iframeContainer = document.getElementById('iframe-container');
 
     button.addEventListener('click', function () {
         if (iframeContainer.classList.contains('show')) {
             iframeContainer.classList.remove('show');
-            robotIcon.style.display = 'block';
             closeIcon.style.display = 'none';
+            robotIcon.style.display = 'block';
+            iframeContainer.addEventListener('transitionend', function() {
+                if (!iframeContainer.classList.contains('show')) {
+                    iframeContainer.style.display = "none";
+                }
+            }, {once: true}); 
         } else {
-            iframeContainer.classList.add('show');
-            robotIcon.style.display = 'none';
+            iframeContainer.style.display = "block";
+            setTimeout(function(){
+                iframeContainer.classList.add('show');
+            },0);
             closeIcon.style.display = 'block';
+            robotIcon.style.display = 'none';
         }
     });
 });
