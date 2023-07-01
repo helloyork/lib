@@ -1,3 +1,4 @@
+
 (async()=>{
     if(!window || !document)return;
     function loadSource(src){
